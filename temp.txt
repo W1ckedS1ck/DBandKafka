@@ -1,0 +1,34 @@
+SELECT DISTINCT alien_id,alien_name,alien_type,alien_color FROM raw_input ORDER BY alien_ID;            - все инопланетяне  - 6  rows     (4)
+SELECT DISTINCT witness_id,witness_name,witness_last_name,witness_address,witness_age FROM raw_input;   - все свидетели     - 70 rows     (5)
+SELECT DISTINCT lat,lon,place,country,region FROM raw_input ORDER BY lat;                               - локации           - 17 rows     (5)  
+SELECT time_of_day FROM raw_input;                                                                      - остальное         - 10000 rows  (2)
+
+alien_id,alien_name,alien_type,alien_color,
+witness_id,witness_name,witness_last_name,witness_address,
+witness_age,location_id,lat,lon,
+place,country,region,time_of_day
+
+mysql -h 0.0.0.0 -u root -pp aliens
+PGPASSWORD=p psql -h 127.17.0.1 -p 5533 -U postgres aliens
+pg_dump -h 127.17.0.1 -p 5533 -U postgres -d aliens -t raw_input > /home/ubuntu/PSGRS/raw_input.sql
+
+
+ALTER TABLE raw_input DROP COLUMN alien_id;
+sudo!!!!!!!!! cp /var/lib/docker/volumes/3594c5950769655b4a0e984324e64d142aec2ad353649687e10a21c56080a0c4/_data/aliens/*.csv /home/ubuntu
+
+sed 's/\\0//g'
+
+https://www.youtube.com/watch?v=Kgq4YLa9Jdw&t=2215s - kafka
+https://github.com/Slurmio/kafka-free/tree/main/3.Installing%20Kafka%20and%20working%20with%20a%20cluster%20from%20one%20broker
+
+https://www.oslogic.ru/knowledge/598/shpargalka-po-osnovnym-komandam-postgresql/
+https://rtfm.co.ua/mysql-commands/
+https://infostart.ru/1c/articles/1148863/ - скрипты постгрес
+
+
+
+vitalik@Eng.local@devops-academy-lab-2:~/kafka_2.13-3.0.0$ ./bin/kafka-topics.sh --bootstrap-server localhost:9092 --list
+aliens_lookup
+locations_lookup
+raw_input
+witnesses_lookup

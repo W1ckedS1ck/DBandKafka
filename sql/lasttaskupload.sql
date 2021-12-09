@@ -1,0 +1,29 @@
+use FROM_POST;
+
+LOAD DATA LOCAL INFILE 'locations_lookupFORmaria.txt'
+INTO TABLE locations_lookup
+FIELDS TERMINATED BY ' '
+ENCLOSED BY '"'
+ESCAPED BY '^'
+IGNORE 1 lines;
+
+LOAD DATA LOCAL INFILE 'witnesses_lookupFORmaria.txt'
+INTO TABLE witnesses_lookup
+FIELDS TERMINATED BY ' '
+ENCLOSED BY '"'
+ESCAPED BY '^'
+IGNORE 1 lines;
+
+LOAD DATA LOCAL INFILE 'aliens_lookupFORmaria.txt'
+INTO TABLE aliens_lookup
+FIELDS TERMINATED BY ' '
+ENCLOSED BY '"'
+ESCAPED BY '^'
+IGNORE 1 lines;
+
+LOAD DATA LOCAL INFILE 'raw_inputFORmaria.txt'
+INTO TABLE raw_input
+FIELDS TERMINATED BY ' '
+ENCLOSED BY '"'
+ESCAPED BY '^'
+IGNORE 1 lines;
